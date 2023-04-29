@@ -2,6 +2,8 @@ import React, {useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
 
+import HorixontalScrollBar from './HorixontalScrollBar'
+
 const SearchExercises = () => {
 
   const [search ,setSearch] = useState("")
@@ -85,7 +87,7 @@ const SearchExercises = () => {
     </Box>
 
     <Box sx={{ position: "relative", width: "100%", p: "20px"}}>
-        {/* <HorixontalScrollBar data={bodyParts} /> */}
+        <HorixontalScrollBar data={bodyParts} />
 
     </Box>
 
