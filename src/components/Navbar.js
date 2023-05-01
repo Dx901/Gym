@@ -23,7 +23,7 @@ const Navbar = () => {
       <Stack
         direction="row"
         gap="40px"
-        fontsize="24px"
+        fontSize="24px"
         alignItems="flex-end"
       >
         <Link to="/" style={{ textDecoration: 'none',

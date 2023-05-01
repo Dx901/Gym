@@ -28,12 +28,21 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart} ) => {
         'https://exercisedb.p.rapidapi.com/exercises', exerciseOptions)
 
         
+        // const searchedExercises = exercisesData.filter(
+        //   (exercise) => exercise.name.toLowerCase().includes(search)
+        //   ||exercise.target.toLowerCase().includes(search)
+        //   ||exercise.equipment.toLowerCase().includes(search)
+        //   ||exercise.bodypart.toLowerCase().includes(search)
+        // )
+
         const searchedExercises = exercisesData.filter(
-          (exercise) => exercise.name.toLowerCase().includes(search)
-          ||exercise.target.toLowerCase().includes(search)
-          ||exercise.equipment.toLowerCase().includes(search)
-          ||exercise.bodypart.toLowerCase().includes(search)
-        )
+          (item) => item.name.toLowerCase().includes(search)
+                 || item.target.toLowerCase().includes(search)
+                 || item.equipment.toLowerCase().includes(search)
+                 || item.bodyPart.toLowerCase().includes(search),
+        );
+  
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
 
         setSearch('')
         setExercises(searchedExercises)
@@ -43,8 +52,8 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart} ) => {
   return (
     <Stack alignItems="center" mt="37px" 
       justifyContent="center" p="20px">
-    <Typography fontweight={700} sx={{
-      fontsize: { lg: "44px", xs: "30px"}}}
+    <Typography fontWeight={700} sx={{
+      fontSize: { lg: "44px", xs: "30px"}}}
       mb="50px" textAlign="center">
       Awesome Exercises You <br />should know
     </Typography>
@@ -72,7 +81,7 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart} ) => {
           color: "#fff",
           textTransform: "none",
           width: { lg: "175px", xs: "80px"},
-          fontsize: { lg: "20px", xs: "14px"},
+          fontSize: { lg: "20px", xs: "14px"},
           height: "56px", 
           position: "absolute",
           right: "0"
