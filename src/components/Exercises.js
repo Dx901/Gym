@@ -8,11 +8,11 @@ import ExerciseCard from './ExerciseCard'
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   const [currentPage, setCurrentPage] = useState(1)
-  const exercisesPerpage = 9
+  const [exercisesPerpage] = useState(9)
 
   const indeOfLastExercise = currentPage * exercisesPerpage
   const indeOfFirstExercise = indeOfLastExercise - exercisesPerpage
-  const currentExercises = exercises.slice(indeOfFirstExercise, indeOfLastExercise)
+  const currentExercises = exercises.toString().slice(indeOfFirstExercise, indeOfLastExercise)
 
   const paginate = (e, value) => {
     setCurrentPage(value)
@@ -20,6 +20,30 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     window.scrollTo( {top: 1800, behaviour: "smooth"})
 
   }
+
+  useEffect(() => {
+    const fetchExerciseData = async () => {
+      let exercisesData = []
+
+      if(bodyPart === "all") {
+        exercisesData = await fetchData(
+          'https://exercisedb.p.rapidapi.com/exercises', exerciseOptions)
+  
+      }else {
+        exercisesData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/${bodyPart}$
+          {bodyPart}`, exerciseOptions)
+      }
+
+      setExercises(exercisesData)
+
+
+    }
+
+    fetchExerciseData()
+
+    
+  }, [bodyPart])
   // console.log(exercises)
   return (
     <Box id="exercises"
