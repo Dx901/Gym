@@ -55,7 +55,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         </Typography>
         <Stack direction="row" sx={{ gap: { lg: "110px", xs: "50px"}}}
           flexWrap="wrap" justifyContent="center">
-            {currentExercises.map((exercise, index) =>(
+            {currentExercises.split("").map((exercise, index) =>(
               <ExerciseCard key={index} exercise={exercise}/>
             ))}
           </Stack>
