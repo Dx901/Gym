@@ -5,6 +5,7 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 import BodyPart from './BodyPart';
 import LeftArrowIcon from '../assets/icons/left-arrow.png'
+import RightArrowIcon from '../assets/icons/right-arrow.png'
 // import "/home/mkuru/projects/gym/src/App.css"
 
 const LeftArrow = () => {
@@ -22,7 +23,7 @@ const RightArrow = () => {
 
   return (
     <Typography onClick={() => scrollNext()} className="left-arrow">
-      <img src={LeftArrowIcon} alt="Right Arrow" />
+      <img src={RightArrowIcon} alt="Right Arrow" />
     </Typography>
   )
 }
