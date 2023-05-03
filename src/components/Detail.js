@@ -34,8 +34,7 @@ const Detail = ( {exerciseDetail }) => {
 
           <Typography variant="h6">
             Exercises make you jacked up and help beat fatigue {name} {` `}
-            sc sj,hcbsjmcs, sj,h, vdm,n vd.j vd,.v ,bk.jcs/s v, v.
-            snc sjcbs,mjhbvskjcnsk vdjbvsms,cns, to target your 
+            Walk into a gym today and start unlocking your potential to target your 
             {target}
           </Typography>
           {extraDetail.map((item) => (
